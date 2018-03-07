@@ -58,3 +58,12 @@
     margin-top: -2px;
     padding-bottom: 0px;
 }
+/* Banner */
+
+.banner {
+    position: relative;
+    min-height: 250px;
+    background-image: url(../src/assets/picture.jpeg);
+    background-size: cover;
+    background-position: 0 30%;
+}

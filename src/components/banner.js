@@ -9,23 +9,8 @@ export default class Banner extends React.Component {
     render(){
         
         return (
-            <div className="navbar">
-                <div className="navbar-left">
-                    <div className="logo">Logo</div>
-                    <div>How it Works</div>
-                    <div>FAQ</div>
-                    <div>Stories</div>
-                    <div>Blog</div>
-                </div>
-
-                <div className="navbar-right">
-                    <div>1 (888) 494-7280</div>
-                    <div className="message">
-                        <div>CLICK HERE FOR</div>
-                        <div className="line"></div>
-                        <div>FREE SCREENING</div>
-                    </div>
-                </div>
+            <div className="banner">
+                    <div className=""> We'd like to get to know you better. Tell us about yourself and the sort of someone you'd like to meet. Don't worry, no one will see this besides the matchmakers at Tawkify.</div>
             </div>
         )
     }
