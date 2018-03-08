@@ -11,7 +11,6 @@ export default class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <div className="navbar-left">
-
                     <div className="logo-container">
                         <img src="src/assets/logo.png" className="logo"/>
                     </div>
@@ -22,11 +21,17 @@ export default class NavBar extends React.Component {
                 </div>
 
                 <div className="navbar-right">
-                    <div>1 (888) 494-7280</div>
+                    <div className="phone-number">1 (888) 494-7280</div>
                     <div className="message">
-                        <div>CLICK HERE FOR</div>
+                        <div>Chat with a love expert</div>
                         <div className="line"></div>
-                        <div>FREE SCREENING</div>
+                        <div className="message-left">
+                            <i className="fa fa-phone" style={{ fontSize: "14px" }}/>
+                            <div className="message-right">
+                                <div>CLICK HERE FOR</div>
+                                <div>FREE SCREENING</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

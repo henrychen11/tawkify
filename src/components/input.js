@@ -62,19 +62,22 @@ export default class InputForm extends React.Component {
 
             <form className="form-main">
                 <div className="row">
-                    <div>Tell us a bit about yourself</div>
-                    <div>Tell us a bit about yourself and who you’d like to meet. The more we know, the better. Be candid--this info is for our eyes only. Tawkify profiles and photos will forever be 100% confidential.</div>
+                    <div className="page-text">
+                        <div className="page-heading">Tell us a bit about yourself</div>
+                        <div className="page-subtext">Tell us a bit about yourself and who you’d like to meet. The more we know, the better. Be candid--this info is for our eyes only. Tawkify profiles and photos will forever be 100% confidential.</div>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="input-left">
                         <div className="label-container">
-                        <label>YOUR GENDER<span className="indicator">*</span></label>
+                            <label>YOUR GENDER<span className="indicator">*</span></label>
                         </div>
                         <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" required>
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
                         </select>
+                        <div className="input-text">Select your gender</div>
                     </div>
                     <div className="input-right">
                         <div className="label-container">
@@ -86,6 +89,7 @@ export default class InputForm extends React.Component {
                             <option>Female</option>
                             <option>Both</option>
                         </select>
+                        <div className="input-text">Select the sexual orientation you're seeking</div>
                     </div>
                 </div>
                 <div className="row">
@@ -94,6 +98,7 @@ export default class InputForm extends React.Component {
                         <label>LOCATION<span className="indicator">*</span></label>
                         </div>
                         <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" required/>
+                        <div className="input-text">Where are you located?</div>
                     </div>
                     <div className="input-right">
                         <div className="label-container">
@@ -115,6 +120,7 @@ export default class InputForm extends React.Component {
                             <option></option>
                             {this.renderHeight()}
                         </select>
+                        <div className="input-text">What is your height?</div>
                     </div>
                     <div className="input-right">
                         <div className="label-container">
@@ -160,6 +166,7 @@ export default class InputForm extends React.Component {
                             <option>$500,000-$1,000,000</option>
                             <option>Rather not say</option>
                         </select>
+                        <div className="input-text">Why? This is one form of an indicator..</div>
                     </div>
                 </div>
                 <div className="row">
@@ -179,12 +186,14 @@ export default class InputForm extends React.Component {
                             onChange={this.handleUpdate('incomeFactor').bind(this)}
                             id="income-factor">No</button>
                         </div>
+                        <div className="input-text">Is income a factor in your match preferences?</div>
                     </div>
                     <div className="input-right">
                         <div className="label-container">
                             <label>INTERESTS</label>
                         </div>
                     <textarea onChange={this.handleUpdate('interests').bind(this)} value={this.state.interests} type="text" />
+                    <div className="input-text">Tell us a little more about yourself and what you like to do. We read everything, so please share!</div>
                     </div>
                 </div>
                 <div className="button-container">
