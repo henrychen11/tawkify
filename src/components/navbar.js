@@ -11,7 +11,10 @@ export default class NavBar extends React.Component {
         return (
             <div className="navbar">
                 <div className="navbar-left">
-                    <div className="logo">Logo</div>
+
+                    <div className="logo-container">
+                        <img src="src/assets/logo.png" className="logo"/>
+                    </div>
                     <div>How it Works</div>
                     <div>FAQ</div>
                     <div>Stories</div>
