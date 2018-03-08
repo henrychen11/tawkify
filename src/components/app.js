@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './navbar';
 import Banner from './banner';
-import Input from './input';
+import InputForm from './input';
 
 export default class App extends React.Component {
     render(){
@@ -9,7 +9,7 @@ export default class App extends React.Component {
             <div className="">
                 <NavBar />
                 <Banner />
-                <Input />
+                <InputForm />
             </div>
         )
     }
