@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 export default class InputForm extends React.Component {
     constructor(props){
@@ -54,13 +55,27 @@ export default class InputForm extends React.Component {
         e.preventDefault();
         this.setState({ incomeFactor: false});
     }
+
+    addUser(user){
+        axios.post('https://tawkify-server.herokuapp.com/users', user)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }
     
+    handleSubmit(){
+        this.addUser(this.state);
+        this.props.history.push('/photo');
+    }
 
     render(){
-        console.log(this.state);
+        console.log('state', this.state);
         return (
 
-            <form className="form-main">
+            <form onSubmit={this.handleSubmit.bind(this)} className="form-main">
                 <div className="row">
                     <div className="page-text">
                         <div className="page-heading">Tell us a bit about yourself</div>
@@ -72,7 +87,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>YOUR GENDER<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" required>
+                        <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" require>
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
@@ -83,7 +98,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>YOU ARE SEEKING<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.seeking} onChange={this.handleUpdate('seeking').bind(this)} id="seeking" required>
+                        <select value={this.state.seeking} onChange={this.handleUpdate('seeking').bind(this)} id="seeking" require>
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
@@ -97,7 +112,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                         <label>LOCATION<span className="indicator">*</span></label>
                         </div>
-                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" required/>
+                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" require/>
                         <div className="input-text">Where are you located?</div>
                     </div>
                     <div className="input-right">
@@ -105,9 +120,9 @@ export default class InputForm extends React.Component {
                             <label>YOUR BIRTHDAY<span className="indicator">*</span></label>
                         </div>
                         <div className="date-container">
-                            <input value={this.state.month} onChange={this.handleUpdate('month').bind(this)} id="birthday" placeholder="MM" pattern="[0-9]{2}" type="text" required/>
-                            <input value={this.state.day} onChange={this.handleUpdate('day').bind(this)} id="birthday" placeholder="DD" pattern="[0-9]{2}" type="text" required/>
-                            <input value={this.state.year} onChange={this.handleUpdate('year').bind(this)} id="birthday" placeholder="YYYY" pattern="[0-9]{4}" type="text" required/>
+                            <input value={this.state.month} onChange={this.handleUpdate('month').bind(this)} id="birthday" placeholder="MM" pattern="[0-9]{2}" type="text" require/>
+                            <input value={this.state.day} onChange={this.handleUpdate('day').bind(this)} id="birthday" placeholder="DD" pattern="[0-9]{2}" type="text" require/>
+                            <input value={this.state.year} onChange={this.handleUpdate('year').bind(this)} id="birthday" placeholder="YYYY" pattern="[0-9]{4}" type="text" require/>
                         </div>
                     </div>
                 </div>
@@ -116,7 +131,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                         <label>YOUR HEIGHT<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.height} onChange={this.handleUpdate('height').bind(this)} id="height" required>
+                        <select value={this.state.height} onChange={this.handleUpdate('height').bind(this)} id="height" require>
                             <option></option>
                             {this.renderHeight()}
                         </select>
@@ -145,14 +160,14 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>OCCUPATION</label>
                         </div>
-                        <textarea value={this.state.occupation} id="occupation" type="text" />
+                        <textarea value={this.state.occupation} onChange={this.handleUpdate('occupation').bind(this)} id="occupation" type="text" />
                         <div className="input-text">What do you do?</div>
                     </div>
                     <div className="input-right">
                         <div className="label-container">
                             <label>INCOME<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.income} onChange={this.handleUpdate('income').bind(this)} id="seeking" required>
+                        <select value={this.state.income} onChange={this.handleUpdate('income').bind(this)} id="seeking" require>
                             <option></option>
                             <option>Less than $40,000</option>
                             <option>$40,000-$60,000</option>

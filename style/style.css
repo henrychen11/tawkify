@@ -316,3 +316,20 @@ label {
     margin-bottom: 40px;
     background-color: #F27172;
 }
+
+.results-container {
+    margin: 0 16.66666667% 16.66666667% 16.66666667%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+th {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+/* td:first-of-type, td:first-of-type > div {
+    height: 200px;
+    width: 250px;
+} */

@@ -3,13 +3,10 @@ import React from 'react';
 export default class Photo extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props;
     }
 
-
-
-    handleSubmit(info){
-        this.props.addUser(info);
+    handleSubmit(){
+        this.props.history.push('/results');
     }
 
     render(){

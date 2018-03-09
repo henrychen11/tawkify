@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 
 export default class Results extends React.Component {
     constructor(props){
@@ -16,23 +17,78 @@ export default class Results extends React.Component {
             .then(function(resp) { return resp.json(); })
             .then(function(data) {
             self.setState({ data: data, isLoading: false }) });
-            
     }
 
+    renderTable(users){
+        let list = [];
+        _.mapValues( this.state.data, (value) => {
+            list.push(value);
+        });
+        return list;
+    }
 
-    render(){
-        console.log('render', this.state.data)
-        let display;
-        if (this.state.isLoading){
-            display = <div>Loading</div>
-        } else {
-            display = <div>data</div>
+    renderUsers(user){
+            return  ( 
+                        <tr key={user.id}>
+                            <td>{user.gender}</td>
+                            <td>{user.seeking}</td>
+                            <td>{user.location}</td>
+                            <td>{user.month}</td>
+                            <td>{user.day}</td>
+                            <td>{user.year}</td>
+                            <td>{user.height}</td>
+                            <td>{user.heightFactor}</td>
+                            <td>{user.occupation}</td>
+                            <td>{user.income}</td>
+                            <td>{user.incomeFactor}</td>
+                            <td>{user.interests}</td>
+                        </tr>
+                    )
         }
 
-        return (
-            <div>Here are results
-                {display}
-            </div>
-        )
+    render(){
+        if (this.state.isLoading){
+            return <div>Loading</div>;
+        } else {
+            console.log("view", this.renderTable());
+            return (
+                <div className="results-container">
+                    <table className="table table-hover">
+                        <thead>
+                            <tr className="table-header">
+                                <th>Gender</th>
+                                <th>Seeking</th>
+                                <th>Location</th>
+                                <th>Month</th>
+                                <th>Day</th>
+                                <th>Year</th>
+                                <th>Height</th>
+                                <th>Height Factor</th>
+                                <th>Occupation</th>
+                                <th>Income</th>
+                                <th>Income Factor</th>
+                                <th>Interests</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.renderTable().map( (user) => this.renderUsers(user))} 
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
+
     }
 }
+
+// {
+//     _.mapValues( this.state.data, (v) => { 
+//         console.log('here', v);
+//         return  ( 
+//                     <tr key={v.id}>
+//                         <td>asdf</td>
+//                         <td>asdf</td>
+//                     </tr>
+//                 )
+//         }
+// }

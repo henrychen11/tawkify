@@ -1,18 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from 'components/app';
-import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers/root_reducer';
-import ReduxPromise from 'redux-promise';
+import configureStore from './store/store';
+import Root from './components/root';
 
-let createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+let store = configureStore();
 
-ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(rootReducer)}>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </Provider>, 
-    document.getElementById('app') );
+document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(<Root store={store} />,  document.getElementById('app') );
+});
