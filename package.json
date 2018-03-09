@@ -4,7 +4,8 @@
   "description": "React Template",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack --watch",
+    "dev": "webpack-dev-server",
     "server": "json-server --watch db.json --port 3001"
   },
   "keywords": [],
