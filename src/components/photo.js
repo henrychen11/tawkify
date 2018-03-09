@@ -10,7 +10,6 @@ export default class Photo extends React.Component {
     }
 
     render(){
-        console.log(this.state);
         return (
             <form onSubmit={this.handleSubmit.bind(this)} className="photo-main">
                 <div className="page-text">
@@ -24,9 +23,9 @@ export default class Photo extends React.Component {
                     <div className="picture-icon"><i className="fa fa-picture-o"></i></div>
                     <div className="photo-text">Drag and drop a photo</div>
                 </div>
-                <button className="photo-btn">CHOOSE FILE</button>
+                <button className="photo-btn" disabled>CHOOSE FILE</button>
                 <div>If you have problems with uploading your pictures, please contact us at (844) 494-7280 or support@tawkify.com.</div>
-                <button className="form-btn">SAVE AND CONTINUE</button>
+                <button type="submit" className="form-btn">SAVE AND CONTINUE</button>
             </form>
         )
     }

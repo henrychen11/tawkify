@@ -72,9 +72,7 @@ export default class InputForm extends React.Component {
     }
 
     render(){
-        console.log('state', this.state);
         return (
-
             <form onSubmit={this.handleSubmit.bind(this)} className="form-main">
                 <div className="row">
                     <div className="page-text">
@@ -87,7 +85,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>YOUR GENDER<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" require>
+                        <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" required>
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
@@ -98,7 +96,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>YOU ARE SEEKING<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.seeking} onChange={this.handleUpdate('seeking').bind(this)} id="seeking" require>
+                        <select value={this.state.seeking} onChange={this.handleUpdate('seeking').bind(this)} id="seeking" required>
                             <option></option>
                             <option>Male</option>
                             <option>Female</option>
@@ -112,7 +110,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                         <label>LOCATION<span className="indicator">*</span></label>
                         </div>
-                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" require/>
+                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" required/>
                         <div className="input-text">Where are you located?</div>
                     </div>
                     <div className="input-right">
@@ -120,9 +118,9 @@ export default class InputForm extends React.Component {
                             <label>YOUR BIRTHDAY<span className="indicator">*</span></label>
                         </div>
                         <div className="date-container">
-                            <input value={this.state.month} onChange={this.handleUpdate('month').bind(this)} id="birthday" placeholder="MM" pattern="[0-9]{2}" type="text" require/>
-                            <input value={this.state.day} onChange={this.handleUpdate('day').bind(this)} id="birthday" placeholder="DD" pattern="[0-9]{2}" type="text" require/>
-                            <input value={this.state.year} onChange={this.handleUpdate('year').bind(this)} id="birthday" placeholder="YYYY" pattern="[0-9]{4}" type="text" require/>
+                            <input value={this.state.month} onChange={this.handleUpdate('month').bind(this)} id="birthday" placeholder="MM" pattern="[0-9]{2}" type="text" required/>
+                            <input value={this.state.day} onChange={this.handleUpdate('day').bind(this)} id="birthday" placeholder="DD" pattern="[0-9]{2}" type="text" required/>
+                            <input value={this.state.year} onChange={this.handleUpdate('year').bind(this)} id="birthday" placeholder="YYYY" pattern="[0-9]{4}" type="text" required/>
                         </div>
                     </div>
                 </div>
@@ -131,7 +129,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                         <label>YOUR HEIGHT<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.height} onChange={this.handleUpdate('height').bind(this)} id="height" require>
+                        <select value={this.state.height} onChange={this.handleUpdate('height').bind(this)} id="height" required>
                             <option></option>
                             {this.renderHeight()}
                         </select>
@@ -167,7 +165,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                             <label>INCOME<span className="indicator">*</span></label>
                         </div>
-                        <select value={this.state.income} onChange={this.handleUpdate('income').bind(this)} id="seeking" require>
+                        <select value={this.state.income} onChange={this.handleUpdate('income').bind(this)} id="seeking" required>
                             <option></option>
                             <option>Less than $40,000</option>
                             <option>$40,000-$60,000</option>

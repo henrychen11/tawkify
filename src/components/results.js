@@ -37,15 +37,18 @@ export default class Results extends React.Component {
                             <td>{user.day}</td>
                             <td>{user.year}</td>
                             <td>{user.height}</td>
-                            <td>{user.heightFactor}</td>
+                            <td>{(user.heightFactor) ? 'Yes' : 'No'}</td>
                             <td>{user.occupation}</td>
                             <td>{user.income}</td>
-                            <td>{user.incomeFactor}</td>
+                            <td>{(user.incomeFactor) ? 'Yes' : 'No'}</td>
                             <td>{user.interests}</td>
                         </tr>
                     )
         }
 
+    handleClick(){
+        this.props.history.push('/');;
+    }
     render(){
         if (this.state.isLoading){
             return <div>Loading</div>;
@@ -74,21 +77,10 @@ export default class Results extends React.Component {
                             {this.renderTable().map( (user) => this.renderUsers(user))} 
                         </tbody>
                     </table>
+                    <button className="form-btn" onClick={this.handleClick.bind(this)}>GO TO HOME PAGE</button>
                 </div>
             )
         }
 
     }
 }
-
-// {
-//     _.mapValues( this.state.data, (v) => { 
-//         console.log('here', v);
-//         return  ( 
-//                     <tr key={v.id}>
-//                         <td>asdf</td>
-//                         <td>asdf</td>
-//                     </tr>
-//                 )
-//         }
-// }

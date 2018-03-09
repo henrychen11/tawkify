@@ -318,7 +318,7 @@ label {
 }
 
 .results-container {
-    margin: 0 16.66666667% 16.66666667% 16.66666667%;
+    margin: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
