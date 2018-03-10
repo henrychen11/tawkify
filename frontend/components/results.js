@@ -53,8 +53,9 @@ export default class Results extends React.Component {
         if (this.state.isLoading){
             return <div>Loading</div>;
         } else {
-            console.log("view", this.renderTable());
             return (
+                <div>
+                <h1 className="results-heading">Users in Database</h1>
                 <div className="results-container">
                     <table className="table table-hover">
                         <thead>
@@ -78,6 +79,7 @@ export default class Results extends React.Component {
                         </tbody>
                     </table>
                     <button className="form-btn" onClick={this.handleClick.bind(this)}>GO TO HOME PAGE</button>
+                </div>
                 </div>
             )
         }

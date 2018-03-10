@@ -7,9 +7,9 @@ export default class Status extends React.Component {
             page: 1
         }
     }
-    
 
     render(){
+        console.log('status', this.props.history);
         return (
                 <div className="status-container">
                     <div className="status-row">
