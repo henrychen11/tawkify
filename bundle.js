@@ -39646,18 +39646,54 @@ var Status = function (_React$Component) {
                 { className: "status-container" },
                 _react2.default.createElement(
                     "div",
-                    { className: "status-icon" },
-                    "1"
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "status-icon" },
-                    "2"
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "status-icon" },
-                    "3"
+                    { className: "status-row" },
+                    _react2.default.createElement("div", { className: "line" }),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "bottom-box" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "status-box" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-number" },
+                                "1"
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-desc" },
+                                "ABOUT YOURSELF"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "status-box" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-number" },
+                                "2"
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-desc" },
+                                "IDEAL PARTNER"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "status-box" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-number" },
+                                "3"
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "page-desc" },
+                                "ADD PHOTOS"
+                            )
+                        )
+                    )
                 )
             );
         }

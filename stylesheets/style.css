@@ -334,7 +334,71 @@ th {
     text-align: center !important;
 }
 
-/* td:first-of-type, td:first-of-type > div {
-    height: 200px;
-    width: 250px;
-} */
+.status-container {
+    display: flex;
+    height: 145px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10% 0 10%;
+    /* padding: 5% 15% 5% 15%; */
+}
+
+.status-row {
+    display: flex;
+    justify-content: center;
+}
+
+.status-icon {
+    border: 2px solid #333;
+    border-radius: 25px;
+    z-index: 1;
+}
+
+.page-number {
+    text-align: center;
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.page-number-active {
+    text-align: center;
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: black;
+    background-color: #fff;
+    border: 2px solid #333;
+    cursor: pointer;
+}
+
+.page-desc {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.bottom-box {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line {
+    width: 30%;
+    height: 25px;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    z-index: -1;
+}

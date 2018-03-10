@@ -1,18 +1,19 @@
-# []()
+# [Tawkify](http://tawkify.henryhchen.com/#/)
 
-This is a simple post-it app with emphasis on frontend. I built this application with React, Redux. I tried to build this app with as few libraries as possible, so I built my own Modal class. I also used media query to enable responsive grid display. Please run "npm install" before running the application. Thank you for your time! :smile:
+This is a React application that is a clone of the sign up page for Tawkify. Thanks for taking a look! :smile:
 
 ## Feature
 
-* Add a new post-it note : Add button is disabled unless both title and body have content
-* Update an existing post-it note : Save button is disabled unless there is an change
-* Delete a post-it note
-* Update a color of a post-it note
+* Form validation and pattern matching validation for the various input fields
+* Renders a table of current users in the database
+* Data is being fetch live via an API endpoint [Tawkify Server](tawkify-server.henryhchen.com)
 
 ## Tech Stack
 
 * React
-* Redux
+* React Router
+* Axios
+* JSON Server
 * Webpack
-* Sass
+* CSS
 * HTML
