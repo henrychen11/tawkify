@@ -1,5 +1,5 @@
 body {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: 'Proxima Nova', Georgia, sans-serif !important;
 }
 
 .navbar {
