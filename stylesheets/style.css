@@ -1,3 +1,7 @@
+body {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+}
+
 .navbar {
     border-color: #e7e7e7;
     height: 65px;
@@ -83,7 +87,7 @@
 .banner {
     position: relative;
     min-height: 250px;
-    background-image: url(../src/assets/picture.jpeg);
+    background-image: url(../frontend/assets/picture.jpeg);
     background-size: cover;
     background-position: 0 30%;
     display: flex;
@@ -258,6 +262,7 @@ label {
 .form-btn {
     height: 44px;
     width: 35%;
+    min-width: 250px;
     text-align: center;
     line-height: 40px;
     color: #fff;

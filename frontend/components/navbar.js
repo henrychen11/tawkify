@@ -11,7 +11,7 @@ export default class NavBar extends React.Component {
             <div className="navbar">
                 <div className="navbar-left">
                     <div className="logo-container">
-                        <img src="src/assets/logo.png" className="logo"/>
+                        <img src="frontend/assets/logo.png" className="logo"/>
                     </div>
                     <div>How it Works</div>
                     <div>FAQ</div>

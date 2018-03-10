@@ -1,28 +1,26 @@
-var webpack = require('webpack');
-var path = require('path');
+const path = require("path");
 
 module.exports = {
-    devtool: 'inline-source-map',
-    entry: './src/index.js',
-    output: {
-        path: path.join(__dirname),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        modulesDirectories: ['node_modules', 'src'],
-        extensions: ['', '.js']
-    },
-    module: {
-        loaders: [
-        {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015']
+  context: __dirname,
+  entry: "./frontend/tawkify.jsx",
+  output: {
+    path: path.resolve(__dirname),
+    filename: "bundle.js"
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+          presets: ["react", "env"]
         }
-        ]
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+      }
     ]
-}
+  },
+  resolve: {
+    extensions: [".js", ".jsx", "*"]
+  },
+  devtool: "source-map"
+};
