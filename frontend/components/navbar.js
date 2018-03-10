@@ -23,7 +23,7 @@ export default class NavBar extends React.Component {
                     <div className="phone-number">1 (888) 494-7280</div>
                     <div className="message">
                         <div>Chat with a love expert</div>
-                        <div className="line"></div>
+                        <div className="message-line"></div>
                         <div className="message-left">
                             <i className="fa fa-phone" style={{ fontSize: "14px" }}/>
                             <div className="message-right">

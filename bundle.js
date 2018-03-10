@@ -20573,7 +20573,7 @@ var NavBar = function (_React$Component) {
                             null,
                             "Chat with a love expert"
                         ),
-                        _react2.default.createElement("div", { className: "line" }),
+                        _react2.default.createElement("div", { className: "message-line" }),
                         _react2.default.createElement(
                             "div",
                             { className: "message-left" },
@@ -39632,10 +39632,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Status = function (_React$Component) {
     _inherits(Status, _React$Component);
 
-    function Status() {
+    function Status(props) {
         _classCallCheck(this, Status);
 
-        return _possibleConstructorReturn(this, (Status.__proto__ || Object.getPrototypeOf(Status)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Status.__proto__ || Object.getPrototypeOf(Status)).call(this, props));
+
+        _this.state = {
+            page: 1
+        };
+        return _this;
     }
 
     _createClass(Status, [{

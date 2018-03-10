@@ -57,6 +57,11 @@ body {
     font-size: 12px;
 }
 
+.message:hover {
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+}
+
 .message-left {
     display: flex;
     flex-direction: row;
@@ -76,7 +81,7 @@ body {
     margin-right: -15px;
 }
 
-.line {
+.message-line {
     border-bottom: 1px solid #fff;
     margin-bottom: 0px;
     margin-top: -2px;
