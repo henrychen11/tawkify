@@ -111,7 +111,7 @@ export default class InputForm extends React.Component {
                         <div className="label-container">
                         <label>LOCATION<span className="indicator">*</span></label>
                         </div>
-                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" type="text" required/>
+                        <input value={this.state.location} onChange={this.handleUpdate('location').bind(this)} pattern="[0-9]{5}" id="location" placeholder="Zip Code" type="text" required/>
                         <div className="input-text">Where are you located?</div>
                     </div>
                     <div className="input-right">
