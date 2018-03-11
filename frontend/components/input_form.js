@@ -176,7 +176,7 @@ export default class InputForm extends React.Component {
                             <option>$125,000-$150,000</option>
                             <option>$150,000-$200,000</option>
                             <option>$200,000-$250,000</option>
-                            <option>$250,000-500,000</option>
+                            <option>$250,000-$500,000</option>
                             <option>$500,000-$1,000,000</option>
                             <option>Rather not say</option>
                         </select>
