@@ -87,9 +87,9 @@ export default class InputForm extends React.Component {
                             <label>YOUR GENDER<span className="indicator">*</span></label>
                         </div>
                         <select value={this.state.gender} onChange={this.handleUpdate('gender').bind(this)} id="gender" required>
-                            <option></option>
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option value=""></option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
                         </select>
                         <div className="input-text">Select your gender</div>
                     </div>
@@ -98,10 +98,10 @@ export default class InputForm extends React.Component {
                             <label>YOU ARE SEEKING<span className="indicator">*</span></label>
                         </div>
                         <select value={this.state.seeking} onChange={this.handleUpdate('seeking').bind(this)} id="seeking" required>
-                            <option></option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Both</option>
+                            <option value=""></option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="both">Both</option>
                         </select>
                         <div className="input-text">Select the sexual orientation you\'re seeking</div>
                     </div>
