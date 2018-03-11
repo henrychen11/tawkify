@@ -21456,9 +21456,9 @@ var _results = __webpack_require__(92);
 
 var _results2 = _interopRequireDefault(_results);
 
-var _status = __webpack_require__(95);
+var _status_container = __webpack_require__(155);
 
-var _status2 = _interopRequireDefault(_status);
+var _status_container2 = _interopRequireDefault(_status_container);
 
 var _reactRouterDom = __webpack_require__(37);
 
@@ -21487,7 +21487,7 @@ var App = function (_React$Component) {
                 null,
                 _react2.default.createElement(_navbar2.default, null),
                 _react2.default.createElement(_banner2.default, null),
-                _react2.default.createElement(_status2.default, null),
+                _react2.default.createElement(_status_container2.default, null),
                 _react2.default.createElement(
                     _reactRouterDom.Switch,
                     null,
@@ -40633,18 +40633,20 @@ var Status = function (_React$Component) {
     function Status(props) {
         _classCallCheck(this, Status);
 
-        var _this = _possibleConstructorReturn(this, (Status.__proto__ || Object.getPrototypeOf(Status)).call(this, props));
-
-        _this.state = {
-            page: 1
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Status.__proto__ || Object.getPrototypeOf(Status)).call(this, props));
     }
 
     _createClass(Status, [{
+        key: 'updatePageNumber',
+        value: function updatePageNumber(number) {
+            this.props.updatePage(number);
+        }
+    }, {
         key: 'render',
         value: function render() {
-            console.log('status', this.props.history);
+            var _this2 = this;
+
+            console.log('status render', this.props.page, this.props.page === 3);
             return _react2.default.createElement(
                 'div',
                 { className: 'status-container' },
@@ -40657,10 +40659,12 @@ var Status = function (_React$Component) {
                         { className: 'bottom-box' },
                         _react2.default.createElement(
                             'div',
-                            { className: 'status-box' },
+                            { onClick: function onClick() {
+                                    return _this2.updatePageNumber(1);
+                                }, className: 'status-box' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'page-number' },
+                                { className: this.props.page === 1 ? 'page-number-active' : 'page-number' },
                                 '1'
                             ),
                             _react2.default.createElement(
@@ -40685,10 +40689,12 @@ var Status = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'status-box' },
+                            { onClick: function onClick() {
+                                    return _this2.updatePageNumber(3);
+                                }, className: 'status-box' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'page-number' },
+                                { className: this.props.page === 3 ? 'page-number-active' : 'page-number' },
                                 '3'
                             ),
                             _react2.default.createElement(
@@ -45514,25 +45520,7 @@ exports['default'] = thunk;
 
 /***/ }),
 /* 149 */,
-/* 150 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var UDPATE_PAGE = exports.UDPATE_PAGE = 'UPDATE_PAGE';
-
-var updatePage = exports.updatePage = function updatePage(page) {
-    return {
-        type: UDPATE_PAGE,
-        page: page
-    };
-};
-
-/***/ }),
+/* 150 */,
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45576,11 +45564,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _status_actions = __webpack_require__(150);
-
-var _status_actions2 = _interopRequireDefault(_status_actions);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _page_actions = __webpack_require__(154);
 
 var initialState = {
     page: 1
@@ -45592,10 +45576,11 @@ var pageReducer = function pageReducer() {
 
     Object.freeze(state);
     var newState = void 0;
-
+    console.log('inside reducer', action, action.page);
     switch (action.type) {
-        case _status_actions2.default:
-            newState = Object.assign({}, state, action.page);
+        case _page_actions.UDPATE_PAGE:
+            console.log('herehererere');
+            newState = Object.assign({}, state, { page: action.page });
             return newState;
         default:
             return state;
@@ -45603,6 +45588,62 @@ var pageReducer = function pageReducer() {
 };
 
 exports.default = pageReducer;
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var UDPATE_PAGE = exports.UDPATE_PAGE = 'UPDATE_PAGE';
+
+var updatePage = exports.updatePage = function updatePage(page) {
+    return {
+        type: UDPATE_PAGE,
+        page: page
+    };
+};
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(123);
+
+var _status = __webpack_require__(95);
+
+var _status2 = _interopRequireDefault(_status);
+
+var _page_actions = __webpack_require__(154);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    page: state.page.page
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updatePage: function updatePage(page) {
+      return dispatch((0, _page_actions.updatePage)(page));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_status2.default);
 
 /***/ })
 /******/ ]);
