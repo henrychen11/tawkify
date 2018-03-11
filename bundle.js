@@ -23734,7 +23734,7 @@ var InputForm = function (_React$Component) {
                         _react2.default.createElement(
                             'div',
                             { className: 'input-text' },
-                            'Select the sexual orientation you\'re seeking'
+                            'Select the sexual orientation you\\\'re seeking'
                         )
                     )
                 ),
@@ -23906,60 +23906,60 @@ var InputForm = function (_React$Component) {
                         _react2.default.createElement(
                             'select',
                             { value: this.state.income, onChange: this.handleUpdate('income').bind(this), id: 'seeking', required: true },
-                            _react2.default.createElement('option', null),
+                            _react2.default.createElement('option', { value: '' }),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: 'Less than $40,000' },
                                 'Less than $40,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$40,000-$60,000' },
                                 '$40,000-$60,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$60,000-$80,000' },
                                 '$60,000-$80,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$80,000-$100,000' },
                                 '$80,000-$100,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$100,000-$125,000' },
                                 '$100,000-$125,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$125,000-$150,000' },
                                 '$125,000-$150,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$150,000-$200,000' },
                                 '$150,000-$200,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$200,000-$250,000' },
                                 '$200,000-$250,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
-                                '$250,000-500,000'
+                                { value: '$250,000-$500,000' },
+                                '$250,000-$500,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: '$500,000-$1,000,000' },
                                 '$500,000-$1,000,000'
                             ),
                             _react2.default.createElement(
                                 'option',
-                                null,
+                                { value: 'Rather not say' },
                                 'Rather not say'
                             )
                         ),
