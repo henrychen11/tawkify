@@ -167,18 +167,18 @@ export default class InputForm extends React.Component {
                             <label>INCOME<span className="indicator">*</span></label>
                         </div>
                         <select value={this.state.income} onChange={this.handleUpdate('income').bind(this)} id="seeking" required>
-                            <option></option>
-                            <option>Less than $40,000</option>
-                            <option>$40,000-$60,000</option>
-                            <option>$60,000-$80,000</option>
-                            <option>$80,000-$100,000</option>
-                            <option>$100,000-$125,000</option>
-                            <option>$125,000-$150,000</option>
-                            <option>$150,000-$200,000</option>
-                            <option>$200,000-$250,000</option>
-                            <option>$250,000-$500,000</option>
-                            <option>$500,000-$1,000,000</option>
-                            <option>Rather not say</option>
+                            <option value=""></option>
+                            <option value="Less than $40,000" >Less than $40,000</option>
+                            <option value="$40,000-$60,000" >$40,000-$60,000</option>
+                            <option value="$60,000-$80,000" >$60,000-$80,000</option>
+                            <option value="$80,000-$100,000" >$80,000-$100,000</option>
+                            <option value="$100,000-$125,000" >$100,000-$125,000</option>
+                            <option value="$125,000-$150,000" >$125,000-$150,000</option>
+                            <option value="$150,000-$200,000" >$150,000-$200,000</option>
+                            <option value="$200,000-$250,000" >$200,000-$250,000</option>
+                            <option value="$250,000-$500,000" >$250,000-$500,000</option>
+                            <option value="$500,000-$1,000,000" >$500,000-$1,000,000</option>
+                            <option value="Rather not say" >Rather not say</option>
                         </select>
                         <div className="input-text">Why? This is one form of an indicator..</div>
                     </div>
