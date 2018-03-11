@@ -68,6 +68,7 @@ export default class InputForm extends React.Component {
     
     handleSubmit(){
         this.addUser(this.state);
+        this.props.updatePage(3);
         this.props.history.push('/photo');
     }
 

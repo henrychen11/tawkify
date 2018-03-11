@@ -21444,17 +21444,17 @@ var _banner = __webpack_require__(70);
 
 var _banner2 = _interopRequireDefault(_banner);
 
-var _input_form = __webpack_require__(71);
+var _input_form_container = __webpack_require__(156);
 
-var _input_form2 = _interopRequireDefault(_input_form);
+var _input_form_container2 = _interopRequireDefault(_input_form_container);
 
-var _photo = __webpack_require__(91);
+var _photo_container = __webpack_require__(158);
 
-var _photo2 = _interopRequireDefault(_photo);
+var _photo_container2 = _interopRequireDefault(_photo_container);
 
-var _results = __webpack_require__(92);
+var _results_container = __webpack_require__(157);
 
-var _results2 = _interopRequireDefault(_results);
+var _results_container2 = _interopRequireDefault(_results_container);
 
 var _status_container = __webpack_require__(155);
 
@@ -21491,9 +21491,9 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                     _reactRouterDom.Switch,
                     null,
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/results', component: _results2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/photo', component: _photo2.default }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _input_form2.default })
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/results', component: _results_container2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/photo', component: _photo_container2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _input_form_container2.default })
                 )
             );
         }
@@ -21800,6 +21800,7 @@ var InputForm = function (_React$Component) {
         key: 'handleSubmit',
         value: function handleSubmit() {
             this.addUser(this.state);
+            this.props.updatePage(3);
             this.props.history.push('/photo');
         }
     }, {
@@ -23154,6 +23155,7 @@ var Photo = function (_React$Component) {
     _createClass(Photo, [{
         key: 'handleSubmit',
         value: function handleSubmit() {
+            this.props.updatePage(2);
             this.props.history.push('/results');
         }
     }, {
@@ -23349,6 +23351,7 @@ var Results = function (_React$Component) {
     }, {
         key: 'handleClick',
         value: function handleClick() {
+            this.props.updatePage(1);
             this.props.history.push('/');;
         }
     }, {
@@ -40637,70 +40640,58 @@ var Status = function (_React$Component) {
     }
 
     _createClass(Status, [{
-        key: 'updatePageNumber',
-        value: function updatePageNumber(number) {
-            this.props.updatePage(number);
-        }
-    }, {
-        key: 'render',
+        key: "render",
         value: function render() {
-            var _this2 = this;
-
-            console.log('status render', this.props.page, this.props.page === 3);
             return _react2.default.createElement(
-                'div',
-                { className: 'status-container' },
+                "div",
+                { className: "status-container" },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'status-row' },
-                    _react2.default.createElement('div', { className: 'line' }),
+                    "div",
+                    { className: "status-row" },
+                    _react2.default.createElement("div", { className: "line" }),
                     _react2.default.createElement(
-                        'div',
-                        { className: 'bottom-box' },
+                        "div",
+                        { className: "bottom-box" },
                         _react2.default.createElement(
-                            'div',
-                            { onClick: function onClick() {
-                                    return _this2.updatePageNumber(1);
-                                }, className: 'status-box' },
+                            "div",
+                            { className: "status-box" },
                             _react2.default.createElement(
-                                'div',
+                                "div",
                                 { className: this.props.page === 1 ? 'page-number-active' : 'page-number' },
-                                '1'
+                                "1"
                             ),
                             _react2.default.createElement(
-                                'div',
-                                { className: 'page-desc' },
-                                'ABOUT YOURSELF'
+                                "div",
+                                { className: "page-desc" },
+                                "ABOUT YOURSELF"
                             )
                         ),
                         _react2.default.createElement(
-                            'div',
-                            { className: 'status-box' },
+                            "div",
+                            { className: "status-box" },
                             _react2.default.createElement(
-                                'div',
-                                { className: 'page-number' },
-                                '2'
+                                "div",
+                                { className: "page-number" },
+                                "2"
                             ),
                             _react2.default.createElement(
-                                'div',
-                                { className: 'page-desc' },
-                                'IDEAL PARTNER'
+                                "div",
+                                { className: "page-desc" },
+                                "IDEAL PARTNER"
                             )
                         ),
                         _react2.default.createElement(
-                            'div',
-                            { onClick: function onClick() {
-                                    return _this2.updatePageNumber(3);
-                                }, className: 'status-box' },
+                            "div",
+                            { className: "status-box" },
                             _react2.default.createElement(
-                                'div',
+                                "div",
                                 { className: this.props.page === 3 ? 'page-number-active' : 'page-number' },
-                                '3'
+                                "3"
                             ),
                             _react2.default.createElement(
-                                'div',
-                                { className: 'page-desc' },
-                                'ADD PHOTOS'
+                                "div",
+                                { className: "page-desc" },
+                                "ADD PHOTOS"
                             )
                         )
                     )
@@ -45576,10 +45567,8 @@ var pageReducer = function pageReducer() {
 
     Object.freeze(state);
     var newState = void 0;
-    console.log('inside reducer', action, action.page);
     switch (action.type) {
         case _page_actions.UDPATE_PAGE:
-            console.log('herehererere');
             newState = Object.assign({}, state, { page: action.page });
             return newState;
         default:
@@ -45644,6 +45633,99 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_status2.default);
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(123);
+
+var _input_form = __webpack_require__(71);
+
+var _input_form2 = _interopRequireDefault(_input_form);
+
+var _page_actions = __webpack_require__(154);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updatePage: function updatePage(page) {
+      return dispatch((0, _page_actions.updatePage)(page));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_input_form2.default);
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(123);
+
+var _results = __webpack_require__(92);
+
+var _results2 = _interopRequireDefault(_results);
+
+var _page_actions = __webpack_require__(154);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updatePage: function updatePage(page) {
+      return dispatch((0, _page_actions.updatePage)(page));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_results2.default);
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(123);
+
+var _photo = __webpack_require__(91);
+
+var _photo2 = _interopRequireDefault(_photo);
+
+var _page_actions = __webpack_require__(154);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    updatePage: function updatePage(page) {
+      return dispatch((0, _page_actions.updatePage)(page));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_photo2.default);
 
 /***/ })
 /******/ ]);

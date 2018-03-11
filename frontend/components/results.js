@@ -47,6 +47,7 @@ export default class Results extends React.Component {
         }
 
     handleClick(){
+        this.props.updatePage(1);
         this.props.history.push('/');;
     }
     render(){

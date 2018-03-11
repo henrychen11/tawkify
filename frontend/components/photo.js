@@ -6,6 +6,7 @@ export default class Photo extends React.Component {
     }
 
     handleSubmit(){
+        this.props.updatePage(2);
         this.props.history.push('/results');
     }
 
