@@ -40648,10 +40648,10 @@ var Status = function (_React$Component) {
                 _react2.default.createElement(
                     "div",
                     { className: "status-row" },
-                    _react2.default.createElement("div", { className: "line" }),
                     _react2.default.createElement(
                         "div",
                         { className: "bottom-box" },
+                        _react2.default.createElement("div", { className: "line" }),
                         _react2.default.createElement(
                             "div",
                             { className: "status-box" },
