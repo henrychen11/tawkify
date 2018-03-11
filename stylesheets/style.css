@@ -61,6 +61,7 @@ body {
     border-radius: 0px;
     padding: 0px 15px;
     font-size: 12px;
+    cursor: pointer;
 }
 
 .message:hover {
