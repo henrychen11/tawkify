@@ -103,7 +103,7 @@ export default class InputForm extends React.Component {
                             <option value="female">Female</option>
                             <option value="both">Both</option>
                         </select>
-                        <div className="input-text">Select the sexual orientation you\'re seeking</div>
+                        <div className="input-text">Select the sexual orientation you're seeking</div>
                     </div>
                 </div>
                 <div className="row">
